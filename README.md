@@ -19,7 +19,7 @@ Data used: [OpenML](https://www.openml.org/search?type=data&status=active&id=434
 * books['award_count'] from books['awards']
 * books['year_published'] from processing books['date_published']
 * books['is_high_rated'] from books['average_rating'] which can be used as 'y' to predict
-* books['primary_genre'] from processing and using first genre from books['genre_and_votes'] and ignoring votes number
+* books['primary_genre'] from processing and using first genre from books['genre_and_votes'] and ignoring votes number. Filled NaN with 'Other'
 * books['publisher'] filled NaN with 'Other'
 
 ### Visualizations of data
@@ -50,4 +50,5 @@ Accuracy: 0.7083918763571337
 #### Clean up data
 * Make all space ‘title’, ‘author’ as ‘Other’
 * Clean up Genre more by combining some e.g. make Romance-Romantic Suspense, Romance-M M Romance as Romance
+* See if 'description' can be used to fillout 'primary_genre' column where we filled NaN with 'Other' 
 
