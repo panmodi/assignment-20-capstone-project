@@ -46,6 +46,44 @@ Accuracy: 0.7083918763571337
 * I tried all the commented columns dataset from previous cell of code with same model above and always getting results ~70%. Meaning with provided columns the model has converged and now stable. We need to use some other columns and models to come up with better results.
 * The current model can be used by marketing/sales team to predict and target which books to market more on and can have higher sales
 
+### Logistic Regression, KNN algorithm, Decision Tree, RidgeClassifier and SVM
+```
+                     Train Time  Train Accuracy  Test Accuracy
+Model                                                         
+Logistic Regression    0.564514        0.862488       0.708392
+KNN                    0.064912        0.994717       0.690637
+Decision Tree          1.731062        0.994745       0.671925
+Ridge                  0.126910        0.757821       0.688338
+SVM                   40.505464        0.796852       0.702005
+```
+* Logistic Regression is still performing best
+* Accuracy Gap in the Ridge is the least. Model will likely perform exactly the same on totally new data.
+
+### Logistic Regression, KNN algorithm, Decision Tree, RidgeClassifier and SVM model with hyperparameters
+```
+[[5033 2270]
+ [2296 6059]]
+[[4832 2471]
+ [2345 6010]]
+[[4741 2562]
+ [2891 5464]]
+[[4941 2362]
+ [2291 6064]]
+[[5017 2286]
+ [2341 6014]]
+                                             Best Params  Average Train Time  Train Accuracy  Test Accuracy
+Model                                                                                                      
+logisticregression          {'logisticregression__C': 1}            1.505547        0.862488       0.708392
+knn                             {'knn__n_neighbors': 11}           15.798916        0.994745       0.692426
+decisiontree             {'decisiontree__max_depth': 15}            0.261292        0.683673       0.651744
+ridge                              {'ridge__alpha': 1.0}            0.375346        0.925907       0.702836
+svc                 {'svc__C': 10, 'svc__kernel': 'rbf'}           41.033309        0.969262       0.704496
+```
+* Now logisticregression, ridge and svc have 70% accuracy
+* svc takes a long time to come
+* Ridge model takes the least amount of time
+
+
 ### Future work
 
 #### Clean up data
