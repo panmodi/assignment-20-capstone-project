@@ -22,6 +22,10 @@ Data used: [OpenML](https://www.openml.org/search?type=data&status=active&id=434
 * books['is_high_rated'] from books['average_rating'] which can be used as 'y' to predict
 * books['primary_genre'] from processing and using first genre from books['genre_and_votes'] and ignoring votes number. Filled NaN with 'Other'
 * books['publisher'] filled NaN with 'Other'
+##### Additional clean up
+* Take out secondary_genre too. Split like books['primary_genre']. Fill all NaN with 'Other'
+* Ignoring some authors like ",", "Other Author","NOT A BOOK" etc. Checked manually, 'NOT A BOOK' is usually some articles
+* Genre cleaning by combining some genre in to one. Targeting top 20 genres. Unique Genres reduced to 388 from original 466. Now books which are NOT part of top 20 genres are reduced from ~27% to ~18%
 
 ### Visualizations of data
 Added code for visualisation of the data with various charts
@@ -32,6 +36,11 @@ Added code for visualisation of the data with various charts
 * Top 10 frequent Publishers. Ignoring other as it comes as top publisher as in clean up we replaced all spaces and NaN with 'Other'
 * Distribution of Books by Rating and Awards Won
 * Rating Trend Over Time (Since 1980). Used the column which we added 'year_published'
+##### Additional Visualizations
+* Top 20 Most Popular Genres
+* Top 20 genre coverage. This is visulization of data which comparision I have done manually in previous cells
+* Series vs. Standalone Books by Genre
+* 
 
 ### Baseline Model
 Used few of the columns which has books metadata like 'author','publisher','primary_genre','is_series','no_of_other_books_in_series','year_published' as X and 'is_high_rated' will be used as y
